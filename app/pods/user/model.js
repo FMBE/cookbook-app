@@ -1,8 +1,8 @@
-/*import DS from 'ember-data';
+import DS from 'ember-data';
+import attr from 'ember-data/attr';
 
 export default DS.Model.extend({
-  firstname: attr('string'),
-  lastname: attr('string'),
+  name: attr('string'),
   emailaddress: attr('string'),
   password: attr('string')
-});*/
+});
