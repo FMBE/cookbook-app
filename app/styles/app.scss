@@ -41,9 +41,7 @@ body {
 video {
     max-width: 100%;
 }
-video {
-    object-fit: contain;
-}
+
 h1.mega-title{
   font-size: 180px;
   -webkit-user-select: none; /* Chrome/Safari */
@@ -62,8 +60,32 @@ h1.super-title{
   -o-user-select: none;
   user-select: none;
 }
+.about-title{
+  background-image: url(/assets/images/about-background.jpg);
+  background-size: cover;
+  font-family: 'Chewy', cursive;
+  color: white;
+  position: relative;
+  min-width: 100%;
+  min-height: 100%;
+  text-shadow: 2px 2px #000000 ;
+  width: auto;
+  height: auto;
+}
 .register-title{
   background-image: url(/assets/images/register-background.jpg);
+  background-size: cover;
+  font-family: 'Chewy', cursive;
+  color: white;
+  position: relative;
+  min-width: 100%;
+  min-height: 100%;
+  text-shadow: 2px 2px #000000 ;
+  width: auto;
+  height: auto;
+}
+.login-title{
+  background-image: url(/assets/images/login-background.png);
   background-size: cover;
   font-family: 'Chewy', cursive;
   color: white;
@@ -97,6 +119,11 @@ h1.super-title{
   width: auto;
   height: auto;
 }
+.main-menu{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
 .thumbnail{
     border-radius: 25px;
 }
@@ -110,9 +137,15 @@ h1.category-title{
   display: flex;
   justify-content: center;
   align-content: center;
-  position: sticky;  
+  position:relative;
   z-index: +1;
   color: white;
   text-shadow: 2px 2px #000000 ;
   font-size: 70px;
+}
+.explore-options{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
 }

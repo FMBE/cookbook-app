@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  firebaseApp: Ember.inject.service(),
 
   emailAddress: '',
   emailAddress2: '',
@@ -30,12 +31,11 @@ export default Ember.Controller.extend({
 
   isDisabled: Ember.computed.not('isValid'),
 
-  firebase: Ember.inject.service(),
   actions: {
 
     register() {
     var _that = this;
-    const auth = this.get('firebase').auth();
+    const auth = this.get('firebaseApp').auth();
     const email = this.get('emailAddress');
     const password = this.get('password');
     const name = this.get('name');
@@ -44,8 +44,7 @@ export default Ember.Controller.extend({
     const user = this.store.createRecord('user', {
       id: userResponse.uid,
       email: userResponse.email,
-      name : name,
-      password : password
+      name : name
     });
     this.set('email', '');
     this.set('password', '');
@@ -54,6 +53,8 @@ export default Ember.Controller.extend({
       _that.set('name', '');
       _that.set('emailAddress', '');
       _that.set('password','');
+      _that.set('emailAddress2', '');
+      _that.set('password2','');
       _that.transitionToRoute('login');
     });
   });

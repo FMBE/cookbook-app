@@ -3,9 +3,9 @@ import attr from 'ember-data/attr';
 import { hasMany } from 'ember-data/relationships';
 
 export default DS.Model.extend({
-  name: attr('string'),
-  description: attr('string'),
+  name: DS.attr('string'),
+  description: DS.attr('string'),
 
-  ingredients: hasMany('ingredient', {inverse: 'recipe', async: true}),
-  categories: hasMany('category', {inverse 'recipe', async: true})
+  ingredients: DS.hasMany('ingredient'),
+  categories: DS.hasMany('category')
 });
