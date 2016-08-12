@@ -16,9 +16,15 @@
 
 				<div class="form-group">
 					<label>Password</label>
-					{{input type="password" value=password class="form-control" placeholder="Please type a password (A-Z,a-z,0-9)" autofocus="autofocus"}}
+					{{input type="password" value=password class="form-control" placeholder="Please type yout password" autofocus="autofocus"}}
 				</div>
-				<button type="submit" class="btn btn-primary btn-block" disabled={{isDisabled}} {{action 'login'}}>Register</button>
+        {{#if session.isWorking}}
+          <button class='btn btn-default' disabled='disabled'>
+          {{fa-icon 'spinner' spin=true}} Signing in...
+          </button>
+        {{else}}
+				    <button type="submit" class="btn btn-primary btn-block" disabled={{isDisabled}} {{action 'login' 'password'}}>LogIn</button>
+        {{/if}}
 			</div>
 		</div>
 	</section>

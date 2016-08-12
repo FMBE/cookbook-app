@@ -18,8 +18,13 @@
             {{#link-to 'contact' tagName="li"}}<a href="">Contact</a>{{/link-to}}
       </ul>
       <ul class="nav navbar-nav navbar-right">
+            {{#if session.isAuthenticated}}
+            {{#link-to 'index' tagName="li"}}<a href="">Welcome {{session.currentUser.name}}!</a>{{/link-to}}
+            {{#link-to 'index' tagName="li"}}<a href="" {{action 'signOut'}} {{fa-icon 'sign-out'}}>Log Out</a>{{/link-to}}
+        {{else}}
             {{#link-to 'login' tagName="li"}}<a href=""><span class="glyphicon glyphicon-user"></span> Log In</a>{{/link-to}}
             {{#link-to 'register' tagName="li"}}<a href=""><span class="glyphicon glyphicon-log-in"></span> Register</a>{{/link-to}}
+        {{/if}}
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
