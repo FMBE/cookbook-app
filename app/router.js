@@ -9,6 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('about');
   this.route('contact');
+
   this.route('explore', function() {
     this.route('recipes');
     this.route('ingredients');
