@@ -16,11 +16,14 @@
             {{#link-to 'explore' tagName="li"}}<a href="">Explore</a>{{/link-to}}
             {{#link-to 'about' tagName="li"}}<a href="">About</a>{{/link-to}}
             {{#link-to 'contact' tagName="li"}}<a href="">Contact</a>{{/link-to}}
+            {{#if session.isAuthenticated}}
+            {{#link-to 'myrecipes' tagName="li"}}<a href="">MyRecipes</a>{{/link-to}}
+            {{/if}}
       </ul>
       <ul class="nav navbar-nav navbar-right">
             {{#if session.isAuthenticated}}
-            {{#link-to 'index' tagName="li"}}<a href="">Welcome {{session.currentUser.email}}!</a>{{/link-to}}
-            {{#link-to 'index' tagName="li"}}<a href="" {{action 'signOut'}} {{fa-icon 'sign-out'}}>Log Out</a>{{/link-to}}
+            {{#link-to 'myrecipes' tagName="li"}}<a href="">Welcome {{session.currentUser.email}}!</a>{{/link-to}}
+            <li><a href="" {{action 'signOut'}} {{fa-icon 'sign-out'}}>Log Out</a></li>
         {{else}}
             {{#link-to 'login' tagName="li"}}<a href=""><span class="glyphicon glyphicon-user"></span> Log In</a>{{/link-to}}
             {{#link-to 'register' tagName="li"}}<a href=""><span class="glyphicon glyphicon-log-in"></span> Register</a>{{/link-to}}

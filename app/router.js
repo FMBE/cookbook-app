@@ -16,6 +16,11 @@ Router.map(function() {
   });
   this.route('login');
   this.route('register');
+
+  this.route('myrecipes', function() {
+    this.route('new');
+    this.route('edit', { path: '/:recipe_id/edit' });
+  });
 });
 
 export default Router;
