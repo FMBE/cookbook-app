@@ -11,7 +11,9 @@ Router.map(function() {
   this.route('contact');
 
   this.route('explore', function() {
-    this.route('recipes');
+    this.route('recipes', function() {
+      this.route('details', { path: '/:recipe_id/details' });
+    });
     this.route('ingredients');
   });
   this.route('login');
