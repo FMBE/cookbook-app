@@ -7,5 +7,5 @@ export default DS.Model.extend({
   description: attr('string'),
 
   ingredients: hasMany('ingredient'),
-  categories: hasMany('category')
+  category: hasMany('category', {inverse: 'recipe', async: true})
 });

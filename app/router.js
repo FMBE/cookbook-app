@@ -23,6 +23,7 @@ Router.map(function() {
     this.route('new');
     this.route('edit', { path: '/:recipe_id/edit' });
   });
+  this.route('category');
 });
 
 export default Router;
