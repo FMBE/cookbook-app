@@ -3,7 +3,7 @@
 [debug] CLI Version:  3.0.6
 [debug] Platform:     win32
 [debug] Node Version: v4.4.7
-[debug] Time:         Tue Aug 30 2016 13:25:17 GMT-0700 (Pacific Daylight Time)
+[debug] Time:         Wed Aug 31 2016 16:00:06 GMT-0700 (Pacific Daylight Time)
 [debug] ----------------------------------------------------------------------
 [debug] 
 [debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
@@ -20,3 +20,4 @@
 [info] i  deploying hosting
 [info] +  database: rules ready to deploy.
 [info] i  hosting: preparing dist directory for upload...
+[debug] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/cookbook-app/uploads/-KQXp3UJ5v5kBw-wegop?fileCount=51&message= 

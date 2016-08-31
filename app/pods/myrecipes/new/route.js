@@ -3,10 +3,16 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 
   model() {
-    return this.store.createRecord('recipe');
+    return Ember.RSVP.hash({
+      recipe: this.store.createRecord('recipe'),
+      categories: this.store.findAll('category'),
+      ingredients: this.store.findAll('ingredient')
+    });
   },
 
   setupController(controller, model) {
+    controller.set('category', model.category);
+    controller.set('ingredient', model.ingredient);
      this._super(controller, model);
 
    },
@@ -18,7 +24,7 @@ export default Ember.Route.extend({
   actions: {
 
     saveRecipe(newRecipe) {
-      newRecipe.save().then(() => this.transitionTo('myrecipes'));
+      newRecipe.save().then(() => this.transitionTo('myrecipes/new'));
     },
 
     willTransition() {

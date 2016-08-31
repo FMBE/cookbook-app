@@ -1,7 +1,7 @@
-{{#each model as |category|}}
+{{#each item as |category|}}
    <div class="checkbox">
     <label>
-      {{input type="checkbox" name="isAdmin" checked=isPicked}} {{key}}
+      {{input type="checkbox" name="category" checked=isPicked value=category.id}} {{category.name}}
     </label>
   </div>
 {{/each}}

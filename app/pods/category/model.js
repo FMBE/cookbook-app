@@ -5,5 +5,5 @@ import { hasMany } from 'ember-data/relationships';
 export default DS.Model.extend({
   name: attr('string'),
 
-  recipes: hasMany('recipe', {inverse: 'category', async: true})
+  recipe: hasMany('recipe', {inverse: 'category', async: true})
 });
