@@ -8,8 +8,14 @@
     <div class="form-group">
         <label class="col-sm-2 control-label">Categories</label>
         <div class="row col-sm-10">
-        {{#categories-checkbox-list item=item.categories}}
-      {{/categories-checkbox-list}}
+          <br>
+          {{#each item.categories as |category| }}
+             <div class="checkbox">
+              <label>
+                <input type="checkbox" name="category" checked={{isPicked}} onclick={{action 'elementSelected' category value=target.checked}}> {{category.name}}
+              </label>
+            </div>
+          {{/each}}
     </div>
     </div>
     <div class="form-group">
@@ -20,7 +26,7 @@
     </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default" {{action 'buttonClicked' item}} disabled="{{unless item.isValid 'disabled'}}">{{buttonLabel}}</button>
+            <button type="submit" class="btn btn-default" {{action 'buttonClicked' item}} >Submit</button>
         </div>
     </div>
 </div>
